@@ -66,6 +66,11 @@ Public Class Form1
         PictureBox3.Left += 20
         PictureBox3.Left += 20
         PictureBox3.Left += 20
+        If PictureBox3.Left > 830 Then
+            Timer2.Enabled = False
+            PictureBox3.Left = PictureBox1.Left
+            PictureBox3.Top = PictureBox1.Top + 40
+        End If
     End Sub
 
     Private Sub PictureBox1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles PictureBox1.Click
