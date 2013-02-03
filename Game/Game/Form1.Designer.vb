@@ -24,11 +24,9 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.PictureHero = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.FireArrow = New System.Windows.Forms.PictureBox()
         Me.FF = New System.Windows.Forms.PictureBox()
         Me.FTH = New System.Windows.Forms.PictureBox()
         Me.FTW = New System.Windows.Forms.PictureBox()
@@ -49,9 +47,10 @@ Partial Class Form1
         Me.OTW = New System.Windows.Forms.PictureBox()
         Me.OTH = New System.Windows.Forms.PictureBox()
         Me.OFF = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.FrostBolt = New System.Windows.Forms.PictureBox()
+        Me.PictureVillian = New System.Windows.Forms.PictureBox()
+        CType(Me.PictureHero, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FireArrow, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FF, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FTH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FTW, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,46 +71,31 @@ Partial Class Form1
         CType(Me.OTW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OTH, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OFF, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FrostBolt, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureVillian, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PictureBox1
+        'PictureHero
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(140, 169)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(92, 154)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.PictureHero.BackColor = System.Drawing.Color.Transparent
+        Me.PictureHero.Image = CType(resources.GetObject("PictureHero.Image"), System.Drawing.Image)
+        Me.PictureHero.Location = New System.Drawing.Point(151, 161)
+        Me.PictureHero.Name = "PictureHero"
+        Me.PictureHero.Size = New System.Drawing.Size(92, 154)
+        Me.PictureHero.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureHero.TabIndex = 0
+        Me.PictureHero.TabStop = False
         '
-        'Timer1
+        'FireArrow
         '
-        '
-        'Timer2
-        '
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(721, 92)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(285, 154)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 3
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(181, 215)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(51, 31)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 2
-        Me.PictureBox4.TabStop = False
+        Me.FireArrow.BackColor = System.Drawing.Color.Transparent
+        Me.FireArrow.Image = CType(resources.GetObject("FireArrow.Image"), System.Drawing.Image)
+        Me.FireArrow.Location = New System.Drawing.Point(181, 215)
+        Me.FireArrow.Name = "FireArrow"
+        Me.FireArrow.Size = New System.Drawing.Size(51, 31)
+        Me.FireArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FireArrow.TabIndex = 2
+        Me.FireArrow.TabStop = False
         '
         'FF
         '
@@ -333,6 +317,28 @@ Partial Class Form1
         Me.OFF.TabStop = False
         Me.OFF.Visible = False
         '
+        'FrostBolt
+        '
+        Me.FrostBolt.BackColor = System.Drawing.Color.Transparent
+        Me.FrostBolt.Image = CType(resources.GetObject("FrostBolt.Image"), System.Drawing.Image)
+        Me.FrostBolt.Location = New System.Drawing.Point(790, 141)
+        Me.FrostBolt.Name = "FrostBolt"
+        Me.FrostBolt.Size = New System.Drawing.Size(100, 50)
+        Me.FrostBolt.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.FrostBolt.TabIndex = 26
+        Me.FrostBolt.TabStop = False
+        '
+        'PictureVillian
+        '
+        Me.PictureVillian.BackColor = System.Drawing.Color.Transparent
+        Me.PictureVillian.Image = CType(resources.GetObject("PictureVillian.Image"), System.Drawing.Image)
+        Me.PictureVillian.Location = New System.Drawing.Point(708, 102)
+        Me.PictureVillian.Name = "PictureVillian"
+        Me.PictureVillian.Size = New System.Drawing.Size(285, 154)
+        Me.PictureVillian.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureVillian.TabIndex = 27
+        Me.PictureVillian.TabStop = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -341,6 +347,8 @@ Partial Class Form1
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1079, 410)
+        Me.Controls.Add(Me.PictureVillian)
+        Me.Controls.Add(Me.FrostBolt)
         Me.Controls.Add(Me.ONN)
         Me.Controls.Add(Me.OO)
         Me.Controls.Add(Me.OTW)
@@ -361,14 +369,14 @@ Partial Class Form1
         Me.Controls.Add(Me.FTW)
         Me.Controls.Add(Me.FTH)
         Me.Controls.Add(Me.FF)
-        Me.Controls.Add(Me.PictureBox2)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.PictureHero)
+        Me.Controls.Add(Me.FireArrow)
+        Me.DoubleBuffered = True
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.Text = "Form1"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureHero, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FireArrow, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FF, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FTH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FTW, System.ComponentModel.ISupportInitialize).EndInit()
@@ -389,14 +397,14 @@ Partial Class Form1
         CType(Me.OTW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OTH, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.OFF, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.FrostBolt, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureVillian, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureHero As System.Windows.Forms.PictureBox
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
-    Friend WithEvents Timer2 As System.Windows.Forms.Timer
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
+    Friend WithEvents FireArrow As System.Windows.Forms.PictureBox
     Friend WithEvents FF As System.Windows.Forms.PictureBox
     Friend WithEvents FTH As System.Windows.Forms.PictureBox
     Friend WithEvents FTW As System.Windows.Forms.PictureBox
@@ -417,5 +425,7 @@ Partial Class Form1
     Friend WithEvents OTW As System.Windows.Forms.PictureBox
     Friend WithEvents OTH As System.Windows.Forms.PictureBox
     Friend WithEvents OFF As System.Windows.Forms.PictureBox
+    Friend WithEvents FrostBolt As System.Windows.Forms.PictureBox
+    Friend WithEvents PictureVillian As System.Windows.Forms.PictureBox
 
 End Class
