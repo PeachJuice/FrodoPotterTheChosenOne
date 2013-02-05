@@ -35,6 +35,8 @@ Public Class Form1
         End If
     End Sub
 
+
+
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         If e.KeyCode = Keys.W Then
             isWPressed = False
@@ -48,6 +50,7 @@ Public Class Form1
             isRPressed = False
         End If
     End Sub
+
     Sub MoveMyHero()
         If isWPressed = True Then
             MoveHeroUp()
@@ -61,6 +64,7 @@ Public Class Form1
             ShootArrow()
         End If
     End Sub
+
     Sub MoveHeroUp()
         If PictureHero.Top - heroSpeed / FPS > ONN.Bottom Then
             PictureHero.Top = PictureHero.Top - heroSpeed / FPS
@@ -78,12 +82,18 @@ Public Class Form1
         PictureHero.Left = PictureHero.Left + heroSpeed / FPS
     End Sub
     Sub ShootArrow()
-        FireArrow.Visible = True
-        FireArrow.Left = PictureHero.Left
-        FireArrow.Top = PictureHero.Top + 30
+        If FireArrow.Visible = False Then
+            FireArrow.Visible = True
+            FireArrow.Left = PictureHero.Left
+            FireArrow.Top = PictureHero.Top + 30
+        End If
     End Sub
     Sub MoveArrow()
-        FireArrow.Left = FireArrow.Left + arrowSpeed / FPS
+        If FireArrow.Right > PictureVillian.Left And FireArrow.Top > PictureVillian.Top And FireArrow.Bottom < PictureVillian.Bottom Or FireArrow.Right > Me.Width Then
+            FireArrow.Visible = False
+        Else
+            FireArrow.Left = FireArrow.Left + arrowSpeed / FPS
+        End If
     End Sub
     Sub ShootBolt()
         FrostBolt.Visible = True
@@ -91,11 +101,16 @@ Public Class Form1
         FrostBolt.Top = PictureVillian.Top + 30
     End Sub
     Sub MoveBolt()
+        If FrostBolt.Left < PictureHero.Right And FrostBolt.Top > PictureHero.Top And FrostBolt.Bottom < PictureHero.Bottom Or FrostBolt.Left < 0 Then
+            FrostBolt.Visible = False
+        End If
         FrostBolt.Left = FrostBolt.Left - frostBoltSpeed / FPS
-        If FrostBolt.Top < PictureHero.Top Then
-            FrostBolt.Top = FrostBolt.Top + 5
+        If FrostBolt.Top > PictureHero.Top And FrostBolt.Bottom < PictureHero.Bottom Then
+
         ElseIf FrostBolt.Top > PictureHero.Top Then
             FrostBolt.Top = FrostBolt.Top - 5
+        ElseIf FrostBolt.Top < PictureHero.Top Then
+            FrostBolt.Top = FrostBolt.Top + 5
         End If
     End Sub
 
@@ -172,4 +187,7 @@ Public Class Form1
     '                FTW.Visible = False
     '                FO.Visible = False
     '                FN.Visible = True
+
+
+
 End Class
