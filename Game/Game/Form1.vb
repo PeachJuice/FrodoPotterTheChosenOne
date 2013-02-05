@@ -21,6 +21,11 @@ Public Class Form1
     Dim villianGoingUp As Boolean
     '(0) - W (1) - S (2) - A (3)-D
     Dim keyState() As Boolean = New Boolean() {isWPressed, isSPressed, isAPressed, isDPressed, isRPressed}
+    Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
+        If Asc(e.KeyChar) = Keys.Escape Then
+            Form2.Show()
+        End If
+    End Sub
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.W Then
             isWPressed = True
@@ -34,9 +39,6 @@ Public Class Form1
             isRPressed = True
         End If
     End Sub
-
-
-
     Private Sub Form1_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
         If e.KeyCode = Keys.W Then
             isWPressed = False

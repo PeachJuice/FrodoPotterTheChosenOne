@@ -22,140 +22,126 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
+        Me.Restart = New System.Windows.Forms.Button()
+        Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
+        Me.Restart1 = New System.Windows.Forms.Button()
+        Me.Controls1 = New System.Windows.Forms.Button()
+        Me.MControls = New System.Windows.Forms.Button()
+        Me.ResumeGame1 = New System.Windows.Forms.Button()
+        Me.ResumeGame = New System.Windows.Forms.Button()
+        Me.Quit1 = New System.Windows.Forms.Button()
+        Me.Quit = New System.Windows.Forms.Button()
+        Me.MMenu1 = New System.Windows.Forms.Button()
+        Me.MMenu = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'PictureBox5
+        'Restart
         '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.Game.My.Resources.Resources.Controls
-        Me.PictureBox5.Location = New System.Drawing.Point(233, 112)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 4
-        Me.PictureBox5.TabStop = False
+        Me.Restart.BackgroundImage = Global.Game.My.Resources.Resources.Restart
+        Me.Restart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Restart.Location = New System.Drawing.Point(306, 178)
+        Me.Restart.Name = "Restart"
+        Me.Restart.Size = New System.Drawing.Size(254, 77)
+        Me.Restart.TabIndex = 10
+        Me.Restart.UseVisualStyleBackColor = True
         '
-        'PictureBox3
+        'ImageList1
         '
-        Me.PictureBox3.Image = Global.Game.My.Resources.Resources.Restart
-        Me.PictureBox3.Location = New System.Drawing.Point(233, 212)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 2
-        Me.PictureBox3.TabStop = False
+        Me.ImageList1.ImageStream = CType(resources.GetObject("ImageList1.ImageStream"), System.Windows.Forms.ImageListStreamer)
+        Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
+        Me.ImageList1.Images.SetKeyName(0, "Restart.png")
         '
-        'PictureBox1
+        'Restart1
         '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.Game.My.Resources.Resources.Back_to_main_menu
-        Me.PictureBox1.Location = New System.Drawing.Point(233, 312)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.Restart1.BackgroundImage = Global.Game.My.Resources.Resources.Restart_edited
+        Me.Restart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Restart1.Location = New System.Drawing.Point(306, 178)
+        Me.Restart1.Name = "Restart1"
+        Me.Restart1.Size = New System.Drawing.Size(254, 77)
+        Me.Restart1.TabIndex = 11
+        Me.Restart1.UseVisualStyleBackColor = True
         '
-        'PictureBox4
+        'Controls1
         '
-        Me.PictureBox4.Image = Global.Game.My.Resources.Resources.Quit
-        Me.PictureBox4.Location = New System.Drawing.Point(233, 412)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 3
-        Me.PictureBox4.TabStop = False
+        Me.Controls1.BackgroundImage = Global.Game.My.Resources.Resources.Controls_edited
+        Me.Controls1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Controls1.Location = New System.Drawing.Point(306, 95)
+        Me.Controls1.Name = "Controls1"
+        Me.Controls1.Size = New System.Drawing.Size(254, 77)
+        Me.Controls1.TabIndex = 13
+        Me.Controls1.UseVisualStyleBackColor = True
         '
-        'PictureBox2
+        'MControls
         '
-        Me.PictureBox2.Image = Global.Game.My.Resources.Resources._Resume
-        Me.PictureBox2.Location = New System.Drawing.Point(233, 12)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        Me.PictureBox2.UseWaitCursor = True
+        Me.MControls.BackgroundImage = Global.Game.My.Resources.Resources.Controls
+        Me.MControls.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MControls.Location = New System.Drawing.Point(306, 95)
+        Me.MControls.Name = "MControls"
+        Me.MControls.Size = New System.Drawing.Size(254, 77)
+        Me.MControls.TabIndex = 12
+        Me.MControls.UseVisualStyleBackColor = True
         '
-        'PictureBox6
+        'ResumeGame1
         '
-        Me.PictureBox6.Image = Global.Game.My.Resources.Resources.Resume_Edited
-        Me.PictureBox6.Location = New System.Drawing.Point(233, 12)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox6.TabIndex = 5
-        Me.PictureBox6.TabStop = False
-        Me.PictureBox6.UseWaitCursor = True
-        Me.PictureBox6.Visible = False
+        Me.ResumeGame1.BackgroundImage = Global.Game.My.Resources.Resources.Resume_Edited
+        Me.ResumeGame1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ResumeGame1.Location = New System.Drawing.Point(306, 12)
+        Me.ResumeGame1.Name = "ResumeGame1"
+        Me.ResumeGame1.Size = New System.Drawing.Size(254, 77)
+        Me.ResumeGame1.TabIndex = 15
+        Me.ResumeGame1.UseVisualStyleBackColor = True
         '
-        'PictureBox7
+        'ResumeGame
         '
-        Me.PictureBox7.Image = Global.Game.My.Resources.Resources.Controls_edited
-        Me.PictureBox7.Location = New System.Drawing.Point(233, 112)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox7.TabIndex = 6
-        Me.PictureBox7.TabStop = False
-        Me.PictureBox7.UseWaitCursor = True
-        Me.PictureBox7.Visible = False
+        Me.ResumeGame.BackgroundImage = Global.Game.My.Resources.Resources._Resume
+        Me.ResumeGame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ResumeGame.Location = New System.Drawing.Point(306, 12)
+        Me.ResumeGame.Name = "ResumeGame"
+        Me.ResumeGame.Size = New System.Drawing.Size(254, 77)
+        Me.ResumeGame.TabIndex = 14
+        Me.ResumeGame.UseVisualStyleBackColor = True
         '
-        'PictureBox8
+        'Quit1
         '
-        Me.PictureBox8.Image = Global.Game.My.Resources.Resources.Restart_edited
-        Me.PictureBox8.Location = New System.Drawing.Point(233, 212)
-        Me.PictureBox8.Name = "PictureBox8"
-        Me.PictureBox8.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox8.TabIndex = 7
-        Me.PictureBox8.TabStop = False
-        Me.PictureBox8.UseWaitCursor = True
-        Me.PictureBox8.Visible = False
+        Me.Quit1.BackgroundImage = Global.Game.My.Resources.Resources.quit_edited
+        Me.Quit1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Quit1.Location = New System.Drawing.Point(306, 344)
+        Me.Quit1.Name = "Quit1"
+        Me.Quit1.Size = New System.Drawing.Size(254, 77)
+        Me.Quit1.TabIndex = 17
+        Me.Quit1.UseVisualStyleBackColor = True
         '
-        'PictureBox9
+        'Quit
         '
-        Me.PictureBox9.Image = Global.Game.My.Resources.Resources.Back_to_main_menu__edited
-        Me.PictureBox9.Location = New System.Drawing.Point(233, 312)
-        Me.PictureBox9.Name = "PictureBox9"
-        Me.PictureBox9.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox9.TabIndex = 8
-        Me.PictureBox9.TabStop = False
-        Me.PictureBox9.UseWaitCursor = True
-        Me.PictureBox9.Visible = False
+        Me.Quit.BackgroundImage = Global.Game.My.Resources.Resources.Quit
+        Me.Quit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Quit.Location = New System.Drawing.Point(306, 344)
+        Me.Quit.Name = "Quit"
+        Me.Quit.Size = New System.Drawing.Size(254, 77)
+        Me.Quit.TabIndex = 16
+        Me.Quit.UseVisualStyleBackColor = True
         '
-        'PictureBox10
+        'MMenu1
         '
-        Me.PictureBox10.Image = Global.Game.My.Resources.Resources.quit_edited
-        Me.PictureBox10.Location = New System.Drawing.Point(232, 412)
-        Me.PictureBox10.Name = "PictureBox10"
-        Me.PictureBox10.Size = New System.Drawing.Size(367, 94)
-        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox10.TabIndex = 9
-        Me.PictureBox10.TabStop = False
-        Me.PictureBox10.UseWaitCursor = True
-        Me.PictureBox10.Visible = False
+        Me.MMenu1.BackgroundImage = Global.Game.My.Resources.Resources.Back_to_main_menu__edited
+        Me.MMenu1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MMenu1.Location = New System.Drawing.Point(306, 261)
+        Me.MMenu1.Name = "MMenu1"
+        Me.MMenu1.Size = New System.Drawing.Size(254, 77)
+        Me.MMenu1.TabIndex = 19
+        Me.MMenu1.UseVisualStyleBackColor = True
+        '
+        'MMenu
+        '
+        Me.MMenu.BackgroundImage = Global.Game.My.Resources.Resources.Back_to_main_menu
+        Me.MMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MMenu.Location = New System.Drawing.Point(306, 261)
+        Me.MMenu.Name = "MMenu"
+        Me.MMenu.Size = New System.Drawing.Size(254, 77)
+        Me.MMenu.TabIndex = 18
+        Me.MMenu.UseVisualStyleBackColor = True
         '
         'Form2
         '
@@ -164,39 +150,30 @@ Partial Class Form2
         Me.BackgroundImage = Global.Game.My.Resources.Resources.lotr_ring_by_hrnclk777_d40ev97
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(827, 514)
-        Me.Controls.Add(Me.PictureBox10)
-        Me.Controls.Add(Me.PictureBox9)
-        Me.Controls.Add(Me.PictureBox8)
-        Me.Controls.Add(Me.PictureBox7)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox4)
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.PictureBox1)
-        Me.Controls.Add(Me.PictureBox6)
-        Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.MMenu1)
+        Me.Controls.Add(Me.MMenu)
+        Me.Controls.Add(Me.Quit1)
+        Me.Controls.Add(Me.Quit)
+        Me.Controls.Add(Me.ResumeGame1)
+        Me.Controls.Add(Me.ResumeGame)
+        Me.Controls.Add(Me.Controls1)
+        Me.Controls.Add(Me.MControls)
+        Me.Controls.Add(Me.Restart1)
+        Me.Controls.Add(Me.Restart)
         Me.Name = "Form2"
         Me.Text = "Form2"
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents PictureBox5 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox4 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox6 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox7 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox8 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox9 As System.Windows.Forms.PictureBox
-    Friend WithEvents PictureBox10 As System.Windows.Forms.PictureBox
+    Friend WithEvents Restart As System.Windows.Forms.Button
+    Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
+    Friend WithEvents Restart1 As System.Windows.Forms.Button
+    Friend WithEvents Controls1 As System.Windows.Forms.Button
+    Friend WithEvents MControls As System.Windows.Forms.Button
+    Friend WithEvents ResumeGame1 As System.Windows.Forms.Button
+    Friend WithEvents ResumeGame As System.Windows.Forms.Button
+    Friend WithEvents Quit1 As System.Windows.Forms.Button
+    Friend WithEvents Quit As System.Windows.Forms.Button
+    Friend WithEvents MMenu1 As System.Windows.Forms.Button
+    Friend WithEvents MMenu As System.Windows.Forms.Button
 End Class
