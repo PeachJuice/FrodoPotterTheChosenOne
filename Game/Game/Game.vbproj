@@ -71,6 +71,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +83,12 @@
       <DependentUpon>Form2.vb</DependentUpon>
     </Compile>
     <Compile Include="Form2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form3.Designer.vb">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form3.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -99,6 +106,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -107,11 +120,17 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form3.resx">
+      <DependentUpon>Form3.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +180,45 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\quit_edited.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\SplashscreenFrodopotterthechosenone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\W .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\A .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\S.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\R .png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\move up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\move up2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\move right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Move left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Move down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\FIRE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\BACKbutton.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

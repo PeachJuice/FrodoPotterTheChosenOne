@@ -2,7 +2,7 @@
 Imports System.Threading
 Imports System.Drawing
 Public Class Form2
-    
+
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ResumeGame1.Visible = False
         Quit1.Visible = False
@@ -50,5 +50,15 @@ Public Class Form2
     Private Sub ResumeGame1_MouseLeave(sender As Object, e As EventArgs) Handles ResumeGame1.MouseLeave
         ResumeGame1.Visible = False
         ResumeGame.Visible = True
+    End Sub
+
+    Private Sub ResumeGame1_Click(sender As Object, e As EventArgs) Handles ResumeGame1.Click
+        Me.Close()
+        Form1.MenuOpen = False
+    End Sub
+
+    Private Sub Restart1_Click(sender As Object, e As EventArgs) Handles Restart1.Click
+        Me.Close()
+        Application.Restart()
     End Sub
 End Class

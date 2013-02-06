@@ -4,8 +4,10 @@ Imports System.Drawing
 Public Class Form1
     Dim T1 As Thread
     Dim x, y As Integer
+    Dim BoltExecuted As Integer
     Dim enemyHit As Integer
     Dim mana As Integer
+    Dim manaSub As Integer
     Dim hp As Integer
     Dim frameRate As Long
     Const FPS As Integer = 60
@@ -19,11 +21,13 @@ Public Class Form1
     Dim isDPressed As Boolean
     Dim isRPressed As Boolean
     Dim villianGoingUp As Boolean
+    Public MenuOpen As Boolean
     '(0) - W (1) - S (2) - A (3)-D
     Dim keyState() As Boolean = New Boolean() {isWPressed, isSPressed, isAPressed, isDPressed, isRPressed}
     Private Sub Form1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles Me.KeyPress
         If Asc(e.KeyChar) = Keys.Escape Then
-            Form2.Show()
+            IngameMenu()
+            MenuOpen = True
         End If
     End Sub
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
@@ -52,7 +56,9 @@ Public Class Form1
             isRPressed = False
         End If
     End Sub
-
+    Sub IngameMenu()
+        Form2.Show()
+    End Sub
     Sub MoveMyHero()
         If isWPressed = True Then
             MoveHeroUp()
@@ -94,7 +100,12 @@ Public Class Form1
         If FireArrow.Right > PictureVillian.Left And FireArrow.Top > PictureVillian.Top And FireArrow.Bottom < PictureVillian.Bottom Or FireArrow.Right > Me.Width Then
             FireArrow.Visible = False
         Else
+            If manaSub = 0 Then
+                mana -= 1
+            End If
+            manaSub += 1
             FireArrow.Left = FireArrow.Left + arrowSpeed / FPS
+
         End If
     End Sub
     Sub ShootBolt()
@@ -105,20 +116,26 @@ Public Class Form1
     Sub MoveBolt()
         If FrostBolt.Left < PictureHero.Right And FrostBolt.Top > PictureHero.Top And FrostBolt.Bottom < PictureHero.Bottom Or FrostBolt.Left < 0 Then
             FrostBolt.Visible = False
-        End If
-        FrostBolt.Left = FrostBolt.Left - frostBoltSpeed / FPS
-        If FrostBolt.Top > PictureHero.Top And FrostBolt.Bottom < PictureHero.Bottom Then
+            BoltExecuted = 0
+        Else
+            FrostBolt.Left = FrostBolt.Left - frostBoltSpeed / FPS
+            If FrostBolt.Top > PictureHero.Top And FrostBolt.Bottom < PictureHero.Bottom Then
 
-        ElseIf FrostBolt.Top > PictureHero.Top Then
-            FrostBolt.Top = FrostBolt.Top - 5
-        ElseIf FrostBolt.Top < PictureHero.Top Then
-            FrostBolt.Top = FrostBolt.Top + 5
+            ElseIf FrostBolt.Top > PictureHero.Top Then
+                FrostBolt.Top = FrostBolt.Top - 5
+            ElseIf FrostBolt.Top < PictureHero.Top Then
+                FrostBolt.Top = FrostBolt.Top + 5
+            End If
+
         End If
     End Sub
 
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        manaSub = 0
+        FF.Visible = True
         FireArrow.Visible = False
         FrostBolt.Visible = False
+        BoltExecuted = 0
         Me.DoubleBuffered = True
         Me.Width = My.Computer.Screen.WorkingArea.Width
         Me.Height = Screen.PrimaryScreen.Bounds.Height
@@ -132,8 +149,10 @@ Public Class Form1
     End Sub
     Sub ThreadProc1()
         While True
-            MainGameLoop()
-            Thread.Sleep(1000 / FPS)
+            If MenuOpen = False Then
+                MainGameLoop()
+                Thread.Sleep(1000 / FPS)
+            End If
         End While
     End Sub
     Sub MoveVillian()
@@ -141,6 +160,31 @@ Public Class Form1
             PictureVillian.Top = PictureVillian.Top + villianSpeed / FPS
             If PictureVillian.Bottom + villianSpeed / FPS > Me.Bottom Then
                 villianGoingUp = True
+                'If mana = 4 Then
+                '    FF.Visible = False
+                '    FTH.Visible = True
+                '    FTW.Visible = False
+                '    FO.Visible = False
+                '    FN.Visible = False
+                'ElseIf mana = 3 Then
+                '    FF.Visible = False
+                '    FTH.Visible = False
+                '    FTW.Visible = True
+                '    FO.Visible = False
+                '    FN.Visible = False
+                'ElseIf mana = 2 Then
+                '    FF.Visible = False
+                '    FTH.Visible = False
+                '    FTW.Visible = False
+                '    FO.Visible = True
+                '    FN.Visible = False
+                'ElseIf mana = 1 Then
+                '    FF.Visible = False
+                '    FTH.Visible = False
+                '    FTW.Visible = False
+                '    FO.Visible = False
+                '    FN.Visible = True
+                'End If
             End If
         End If
         If villianGoingUp = True Then
@@ -149,8 +193,9 @@ Public Class Form1
                 villianGoingUp = False
             End If
         End If
-        If PictureVillian.Top - 30 > PictureHero.Top And villianGoingUp = True Or PictureVillian.Top + 30 < PictureHero.Top And villianGoingUp = False Then
+        If (PictureVillian.Top - 30 > PictureHero.Top And villianGoingUp = True Or PictureVillian.Top + 30 < PictureHero.Top And villianGoingUp = False) And BoltExecuted = 0 Then
             ShootBolt()
+            BoltExecuted += 1
         End If
     End Sub
     Sub MainGameLoop()
@@ -163,32 +208,7 @@ Public Class Form1
         T1.Abort()
     End Sub
 
-    '        If mana > 0 Then
-    '            Timer1.Enabled = True
-    '            If mana = 4 Then
-    '                FF.Visible = False
-    '                FTH.Visible = True
-    '                FTW.Visible = False
-    '                FO.Visible = False
-    '                FN.Visible = False
-    '            ElseIf mana = 3 Then
-    '                FF.Visible = False
-    '                FTH.Visible = False
-    '                FTW.Visible = True
-    '                FO.Visible = False
-    '                FN.Visible = False
-    '            ElseIf mana = 2 Then
-    '                FF.Visible = False
-    '                FTH.Visible = False
-    '                FTW.Visible = False
-    '                FO.Visible = True
-    '                FN.Visible = False
-    '            ElseIf mana = 1 Then
-    '                FF.Visible = False
-    '                FTH.Visible = False
-    '                FTW.Visible = False
-    '                FO.Visible = False
-    '                FN.Visible = True
+
 
 
 
